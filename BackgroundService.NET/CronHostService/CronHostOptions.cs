@@ -1,3 +1,6 @@
 ﻿namespace BackgroundService.NET.CronHostService;
 
-public record CronHostOptions(string CronString);
+public record CronHostOptions
+{
+    public string CronString { get; set; } = string.Empty;
+}

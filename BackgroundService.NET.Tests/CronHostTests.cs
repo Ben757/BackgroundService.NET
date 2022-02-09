@@ -95,7 +95,7 @@ public class CronHostTests
 
         optionsMonitorMock
             .Setup(x => x.CurrentValue)
-            .Returns(new CronHostOptions(cronExpression));
+            .Returns(new CronHostOptions(){ CronString = cronExpression });
 
         return new CronHost(jobProviderMock.Object, cronWaiter, logger, optionsMonitorMock.Object);
     }

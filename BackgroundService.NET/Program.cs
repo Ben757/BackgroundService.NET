@@ -1,4 +1,6 @@
 using BackgroundService.NET;
+using BackgroundService.NET.CronHostService;
+using BackgroundService.NET.CronJobProviderService;
 
 var host = Host.CreateDefaultBuilder(args)
     .ConfigureServices(ConfigureServices)
@@ -6,7 +8,13 @@ var host = Host.CreateDefaultBuilder(args)
 
 await host.RunAsync();
 
-void ConfigureServices(IServiceCollection services)
+void ConfigureServices(HostBuilderContext context, IServiceCollection services)
 {
-    services.AddHostedService<WorkerService>(); 
+    services.AddHostedService<WorkerService>();
+
+    services.AddTransient<ICronHost, CronHost>();
+    services.AddTransient<ICronWaiter, CronWaiter>();
+    services.AddSingleton<ICronJobProvider, CronJobProvider>();
+
+    services.Configure<CronHostOptions>(context.Configuration.GetSection(nameof(CronHostOptions)));
 }
