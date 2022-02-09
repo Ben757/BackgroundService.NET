@@ -1,7 +1,12 @@
 using BackgroundService.NET;
 
 var host = Host.CreateDefaultBuilder(args)
-    .ConfigureServices(services => { services.AddHostedService<Worker>(); })
+    .ConfigureServices(ConfigureServices)
     .Build();
 
 await host.RunAsync();
+
+void ConfigureServices(IServiceCollection services)
+{
+    services.AddHostedService<WorkerService>(); 
+}

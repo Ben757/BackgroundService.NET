@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET", "BackgroundService.NET\BackgroundService.NET.csproj", "{61561A97-BDB4-4104-9B22-A06156C1427C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET.CronJob", "BackgroundService.NET.CronJob\BackgroundService.NET.CronJob.csproj", "{A8E7F761-9CA0-4DBB-AADC-A10C2731AE7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{61561A97-BDB4-4104-9B22-A06156C1427C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61561A97-BDB4-4104-9B22-A06156C1427C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61561A97-BDB4-4104-9B22-A06156C1427C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8E7F761-9CA0-4DBB-AADC-A10C2731AE7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8E7F761-9CA0-4DBB-AADC-A10C2731AE7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8E7F761-9CA0-4DBB-AADC-A10C2731AE7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8E7F761-9CA0-4DBB-AADC-A10C2731AE7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
