@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET", "Ba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET.CronJob", "BackgroundService.NET.CronJob\BackgroundService.NET.CronJob.csproj", "{A8E7F761-9CA0-4DBB-AADC-A10C2731AE7E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET.Tests", "BackgroundService.NET.Tests\BackgroundService.NET.Tests.csproj", "{DF1E6C55-72B1-401B-BDD9-0E76DAB3C079}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{A8E7F761-9CA0-4DBB-AADC-A10C2731AE7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8E7F761-9CA0-4DBB-AADC-A10C2731AE7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8E7F761-9CA0-4DBB-AADC-A10C2731AE7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF1E6C55-72B1-401B-BDD9-0E76DAB3C079}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF1E6C55-72B1-401B-BDD9-0E76DAB3C079}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF1E6C55-72B1-401B-BDD9-0E76DAB3C079}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF1E6C55-72B1-401B-BDD9-0E76DAB3C079}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
