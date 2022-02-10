@@ -13,7 +13,8 @@ dotnet publish -c Release $pluginProjectPath
 
 Write-Host "Copying $pluginOutputDir to Plugins dir"
 
-Copy-Item -Path $pluginOutputDir -Destination "BackgroundService.NET\\publish\\Plugins"
+New-Item -Path "BackgroundService.NET\publish" -Name "Plugins" -ItemType "directory"
+Copy-Item -Path $pluginOutputDir -Destination "BackgroundService.NET\publish\Plugins" -Recurse
 
 Write-Host "Creating Setup"
 
