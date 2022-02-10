@@ -14,6 +14,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET.Plugi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET.FailingPlugin", "BackgroundService.NET.SamplePlugins\BackgroundService.NET.FailingPlugin\BackgroundService.NET.FailingPlugin.csproj", "{ED631137-25F8-46D8-80C9-E4B5A9B38F67}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET.PluginWithProjectReference", "BackgroundService.NET.SamplePlugins\BackgroundService.NET.PluginWithProjectReference\BackgroundService.NET.PluginWithProjectReference.csproj", "{59696DF3-73C8-419A-8B29-6026D16188E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET.PluginProjectReference", "BackgroundService.NET.SamplePlugins\BackgroundService.NET.PluginProjectReference\BackgroundService.NET.PluginProjectReference.csproj", "{60BD09C5-8760-4C31-A0FE-61752076CD6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,10 +48,20 @@ Global
 		{ED631137-25F8-46D8-80C9-E4B5A9B38F67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED631137-25F8-46D8-80C9-E4B5A9B38F67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED631137-25F8-46D8-80C9-E4B5A9B38F67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59696DF3-73C8-419A-8B29-6026D16188E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59696DF3-73C8-419A-8B29-6026D16188E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59696DF3-73C8-419A-8B29-6026D16188E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59696DF3-73C8-419A-8B29-6026D16188E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60BD09C5-8760-4C31-A0FE-61752076CD6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60BD09C5-8760-4C31-A0FE-61752076CD6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60BD09C5-8760-4C31-A0FE-61752076CD6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60BD09C5-8760-4C31-A0FE-61752076CD6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7990B21C-F866-4826-B88A-8A678E63A576} = {7D0DB4FB-911F-4F01-B4DA-D9F509D35EEC}
 		{AE68959B-67FC-405F-8850-E26AFEFB9794} = {7D0DB4FB-911F-4F01-B4DA-D9F509D35EEC}
 		{ED631137-25F8-46D8-80C9-E4B5A9B38F67} = {7D0DB4FB-911F-4F01-B4DA-D9F509D35EEC}
+		{59696DF3-73C8-419A-8B29-6026D16188E4} = {7D0DB4FB-911F-4F01-B4DA-D9F509D35EEC}
+		{60BD09C5-8760-4C31-A0FE-61752076CD6C} = {7D0DB4FB-911F-4F01-B4DA-D9F509D35EEC}
 	EndGlobalSection
 EndGlobal
