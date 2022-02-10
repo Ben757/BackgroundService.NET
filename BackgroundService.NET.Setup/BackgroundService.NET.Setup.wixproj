@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" InitialTargets="EnsureWixToolsetInstalled" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProductVersion>3.10</ProductVersion>
+    <ProjectGuid>38cd07be-c199-48cf-88d9-8d52c063a9b1</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>BackgroundService.NET.Setup</OutputName>
+    <OutputType>Package</OutputType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  
+  <!-- https://stackoverflow.com/questions/36756311/include-all-files-in-bin-folder-in-wix-installer -->
+  <PropertyGroup>
+    <DefineConstants>HarvestPath=..\BackgroundService.NET\publish\Plugins</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Product.wxs" />
+    <Compile Include="HeatGeneratedFileList.wxs" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <WixExtension Include="WixUtilExtension">
+      <Name>WixUtilExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  
+  <Import Project="$(WixTargetsPath)" Condition=" '$(WixTargetsPath)' != '' " />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets" Condition=" '$(WixTargetsPath)' == '' AND Exists('$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets') " />
+  <Target Name="EnsureWixToolsetInstalled" Condition=" '$(WixTargetsImported)' != 'true' ">
+    <Error Text="The WiX Toolset v3.11 (or newer) build tools must be installed to build this project. To download the WiX Toolset, see http://wixtoolset.org/releases/" />
+  </Target>
+  
+  <Target Name="BeforeBuild">
+    <HeatDirectory Directory="..\BackgroundService.NET\publish\Plugins"
+                   PreprocessorVariable="var.HarvestPath"
+                   OutputFile="HeatGeneratedFileList.wxs"
+                   ComponentGroupName="HeatGenerated"
+                   DirectoryRefId="INSTALLDIR"
+                   AutogenerateGuids="true"
+                   ToolPath="$(WixToolPath)"
+                   SuppressFragments="true"
+                   SuppressRegistry="true"
+                   SuppressRootDirectory="true" />
+  </Target>
+
+</Project>

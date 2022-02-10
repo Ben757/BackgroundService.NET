@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+	 xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+	<?define Manufacturer="Benjamin Riedle" ?>
+	<?define ProductName="BackgroundService.NET" ?>
+	<?define InstallDirName="BackgroundService.NET" ?>
+	<?define ExecutableFileName="BackgroundService.NET.exe" ?>
+	<?define ServiceName="BackgroundService.NET" ?>
+	<?define ServiceDisplayName="BackgroundService.NET" ?>
+	<?define ServiceDescription="BackgroundService written in .NET 6" ?>
+	<Product Id="*" Name="$(var.ProductName)" Language="1033" Version="!(bind.FileVersion.SingleFileExe)" Manufacturer="$(var.Manufacturer)" UpgradeCode="ed1b040d-f186-444f-8ed3-0fecc045ccf9">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" Platform="x64" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<Media  Id="1"
+				Cabinet="media1.cab"
+				EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="BackgroundService.NET.Setup" Level="1">
+			<ComponentRef Id="ProductComponent" />
+			<ComponentRef Id="AppsettingsComponent"/>
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFiles64Folder">
+				<Directory Id="INSTALLDIR" Name="$(var.InstallDirName)">
+					<Component Id="ProductComponent" Guid="A17C8F95-561F-4670-93D5-24A566D93847">
+						<File Id="SingleFileExe" Name="$(var.ExecutableFileName)" Checksum="yes" KeyPath="yes" DiskId="1" Source="..\BackgroundService.NET\publish\BackgroundService.NET.exe"/>
+						<ServiceInstall Id="ServiceInstaller" Type="ownProcess" Vital="yes" Name="$(var.ServiceName)" DisplayName="$(var.ServiceDisplayName)" Description="$(var.ServiceDescription)" Start="auto" Account="NT AUTHORITY\LocalService" ErrorControl="normal" Interactive="no" >
+							<util:ServiceConfig FirstFailureActionType="restart" SecondFailureActionType="restart" ThirdFailureActionType="restart" RestartServiceDelayInSeconds="60" ResetPeriodInDays="0" />
+							<ServiceConfig FailureActionsWhen="failedToStopOrReturnedError" OnInstall="yes" OnReinstall="yes"/>
+						</ServiceInstall>
+						<ServiceControl Id="StartService" Name="$(var.ServiceName)" Start="install" Stop="both" Remove="uninstall" Wait="yes" />
+					</Component>
+					<Component Id="AppsettingsComponent" Guid="FE73F8E3-A67A-449B-AC17-5DFAADEA994C">
+						<File Id="DefaultAppSettingsFile" Name="appsettings.json" Checksum="yes" DiskId="1" Source="..\BackgroundService.NET\publish\appsettings.json"/>
+					</Component>
+				</Directory>
+			</Directory>
+		</Directory>
+	</Fragment>
+</Wix>

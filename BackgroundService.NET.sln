@@ -1,61 +1,107 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET", "BackgroundService.NET\BackgroundService.NET.csproj", "{61561A97-BDB4-4104-9B22-A06156C1427C}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackgroundService.NET", "BackgroundService.NET\BackgroundService.NET.csproj", "{61561A97-BDB4-4104-9B22-A06156C1427C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET.CronJob", "BackgroundService.NET.CronJob\BackgroundService.NET.CronJob.csproj", "{A8E7F761-9CA0-4DBB-AADC-A10C2731AE7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackgroundService.NET.CronJob", "BackgroundService.NET.CronJob\BackgroundService.NET.CronJob.csproj", "{A8E7F761-9CA0-4DBB-AADC-A10C2731AE7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET.Tests", "BackgroundService.NET.Tests\BackgroundService.NET.Tests.csproj", "{DF1E6C55-72B1-401B-BDD9-0E76DAB3C079}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackgroundService.NET.Tests", "BackgroundService.NET.Tests\BackgroundService.NET.Tests.csproj", "{DF1E6C55-72B1-401B-BDD9-0E76DAB3C079}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET.HelloWorldPlugin", "BackgroundService.NET.SamplePlugins\BackgroundService.NET.HelloWorldPlugin\BackgroundService.NET.HelloWorldPlugin.csproj", "{7990B21C-F866-4826-B88A-8A678E63A576}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackgroundService.NET.HelloWorldPlugin", "BackgroundService.NET.SamplePlugins\BackgroundService.NET.HelloWorldPlugin\BackgroundService.NET.HelloWorldPlugin.csproj", "{7990B21C-F866-4826-B88A-8A678E63A576}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SamplePlugins", "SamplePlugins", "{7D0DB4FB-911F-4F01-B4DA-D9F509D35EEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET.PluginWithDependencies", "BackgroundService.NET.SamplePlugins\BackgroundService.NET.PluginWithDependencies\BackgroundService.NET.PluginWithDependencies.csproj", "{AE68959B-67FC-405F-8850-E26AFEFB9794}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackgroundService.NET.PluginWithDependencies", "BackgroundService.NET.SamplePlugins\BackgroundService.NET.PluginWithDependencies\BackgroundService.NET.PluginWithDependencies.csproj", "{AE68959B-67FC-405F-8850-E26AFEFB9794}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET.FailingPlugin", "BackgroundService.NET.SamplePlugins\BackgroundService.NET.FailingPlugin\BackgroundService.NET.FailingPlugin.csproj", "{ED631137-25F8-46D8-80C9-E4B5A9B38F67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackgroundService.NET.FailingPlugin", "BackgroundService.NET.SamplePlugins\BackgroundService.NET.FailingPlugin\BackgroundService.NET.FailingPlugin.csproj", "{ED631137-25F8-46D8-80C9-E4B5A9B38F67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET.PluginWithProjectReference", "BackgroundService.NET.SamplePlugins\BackgroundService.NET.PluginWithProjectReference\BackgroundService.NET.PluginWithProjectReference.csproj", "{59696DF3-73C8-419A-8B29-6026D16188E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackgroundService.NET.PluginWithProjectReference", "BackgroundService.NET.SamplePlugins\BackgroundService.NET.PluginWithProjectReference\BackgroundService.NET.PluginWithProjectReference.csproj", "{59696DF3-73C8-419A-8B29-6026D16188E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET.PluginProjectReference", "BackgroundService.NET.SamplePlugins\BackgroundService.NET.PluginProjectReference\BackgroundService.NET.PluginProjectReference.csproj", "{60BD09C5-8760-4C31-A0FE-61752076CD6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackgroundService.NET.PluginProjectReference", "BackgroundService.NET.SamplePlugins\BackgroundService.NET.PluginProjectReference\BackgroundService.NET.PluginProjectReference.csproj", "{60BD09C5-8760-4C31-A0FE-61752076CD6C}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "BackgroundService.NET.Setup", "BackgroundService.NET.Setup\BackgroundService.NET.Setup.wixproj", "{38CD07BE-C199-48CF-88D9-8D52C063A9B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{61561A97-BDB4-4104-9B22-A06156C1427C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{61561A97-BDB4-4104-9B22-A06156C1427C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61561A97-BDB4-4104-9B22-A06156C1427C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{61561A97-BDB4-4104-9B22-A06156C1427C}.Debug|x86.Build.0 = Debug|Any CPU
 		{61561A97-BDB4-4104-9B22-A06156C1427C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61561A97-BDB4-4104-9B22-A06156C1427C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61561A97-BDB4-4104-9B22-A06156C1427C}.Release|x86.ActiveCfg = Release|Any CPU
+		{61561A97-BDB4-4104-9B22-A06156C1427C}.Release|x86.Build.0 = Release|Any CPU
 		{A8E7F761-9CA0-4DBB-AADC-A10C2731AE7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A8E7F761-9CA0-4DBB-AADC-A10C2731AE7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8E7F761-9CA0-4DBB-AADC-A10C2731AE7E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A8E7F761-9CA0-4DBB-AADC-A10C2731AE7E}.Debug|x86.Build.0 = Debug|Any CPU
 		{A8E7F761-9CA0-4DBB-AADC-A10C2731AE7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8E7F761-9CA0-4DBB-AADC-A10C2731AE7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8E7F761-9CA0-4DBB-AADC-A10C2731AE7E}.Release|x86.ActiveCfg = Release|Any CPU
+		{A8E7F761-9CA0-4DBB-AADC-A10C2731AE7E}.Release|x86.Build.0 = Release|Any CPU
 		{DF1E6C55-72B1-401B-BDD9-0E76DAB3C079}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DF1E6C55-72B1-401B-BDD9-0E76DAB3C079}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF1E6C55-72B1-401B-BDD9-0E76DAB3C079}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DF1E6C55-72B1-401B-BDD9-0E76DAB3C079}.Debug|x86.Build.0 = Debug|Any CPU
 		{DF1E6C55-72B1-401B-BDD9-0E76DAB3C079}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF1E6C55-72B1-401B-BDD9-0E76DAB3C079}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF1E6C55-72B1-401B-BDD9-0E76DAB3C079}.Release|x86.ActiveCfg = Release|Any CPU
+		{DF1E6C55-72B1-401B-BDD9-0E76DAB3C079}.Release|x86.Build.0 = Release|Any CPU
 		{7990B21C-F866-4826-B88A-8A678E63A576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7990B21C-F866-4826-B88A-8A678E63A576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7990B21C-F866-4826-B88A-8A678E63A576}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7990B21C-F866-4826-B88A-8A678E63A576}.Debug|x86.Build.0 = Debug|Any CPU
 		{7990B21C-F866-4826-B88A-8A678E63A576}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7990B21C-F866-4826-B88A-8A678E63A576}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7990B21C-F866-4826-B88A-8A678E63A576}.Release|x86.ActiveCfg = Release|Any CPU
+		{7990B21C-F866-4826-B88A-8A678E63A576}.Release|x86.Build.0 = Release|Any CPU
 		{AE68959B-67FC-405F-8850-E26AFEFB9794}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AE68959B-67FC-405F-8850-E26AFEFB9794}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE68959B-67FC-405F-8850-E26AFEFB9794}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AE68959B-67FC-405F-8850-E26AFEFB9794}.Debug|x86.Build.0 = Debug|Any CPU
 		{AE68959B-67FC-405F-8850-E26AFEFB9794}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE68959B-67FC-405F-8850-E26AFEFB9794}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE68959B-67FC-405F-8850-E26AFEFB9794}.Release|x86.ActiveCfg = Release|Any CPU
+		{AE68959B-67FC-405F-8850-E26AFEFB9794}.Release|x86.Build.0 = Release|Any CPU
 		{ED631137-25F8-46D8-80C9-E4B5A9B38F67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ED631137-25F8-46D8-80C9-E4B5A9B38F67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED631137-25F8-46D8-80C9-E4B5A9B38F67}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{ED631137-25F8-46D8-80C9-E4B5A9B38F67}.Debug|x86.Build.0 = Debug|Any CPU
 		{ED631137-25F8-46D8-80C9-E4B5A9B38F67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED631137-25F8-46D8-80C9-E4B5A9B38F67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED631137-25F8-46D8-80C9-E4B5A9B38F67}.Release|x86.ActiveCfg = Release|Any CPU
+		{ED631137-25F8-46D8-80C9-E4B5A9B38F67}.Release|x86.Build.0 = Release|Any CPU
 		{59696DF3-73C8-419A-8B29-6026D16188E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{59696DF3-73C8-419A-8B29-6026D16188E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59696DF3-73C8-419A-8B29-6026D16188E4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{59696DF3-73C8-419A-8B29-6026D16188E4}.Debug|x86.Build.0 = Debug|Any CPU
 		{59696DF3-73C8-419A-8B29-6026D16188E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59696DF3-73C8-419A-8B29-6026D16188E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59696DF3-73C8-419A-8B29-6026D16188E4}.Release|x86.ActiveCfg = Release|Any CPU
+		{59696DF3-73C8-419A-8B29-6026D16188E4}.Release|x86.Build.0 = Release|Any CPU
 		{60BD09C5-8760-4C31-A0FE-61752076CD6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{60BD09C5-8760-4C31-A0FE-61752076CD6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60BD09C5-8760-4C31-A0FE-61752076CD6C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{60BD09C5-8760-4C31-A0FE-61752076CD6C}.Debug|x86.Build.0 = Debug|Any CPU
 		{60BD09C5-8760-4C31-A0FE-61752076CD6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60BD09C5-8760-4C31-A0FE-61752076CD6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60BD09C5-8760-4C31-A0FE-61752076CD6C}.Release|x86.ActiveCfg = Release|Any CPU
+		{60BD09C5-8760-4C31-A0FE-61752076CD6C}.Release|x86.Build.0 = Release|Any CPU
+		{38CD07BE-C199-48CF-88D9-8D52C063A9B1}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{38CD07BE-C199-48CF-88D9-8D52C063A9B1}.Debug|x86.ActiveCfg = Debug|x86
+		{38CD07BE-C199-48CF-88D9-8D52C063A9B1}.Release|Any CPU.ActiveCfg = Release|x86
+		{38CD07BE-C199-48CF-88D9-8D52C063A9B1}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7990B21C-F866-4826-B88A-8A678E63A576} = {7D0DB4FB-911F-4F01-B4DA-D9F509D35EEC}
@@ -63,5 +109,8 @@ Global
 		{ED631137-25F8-46D8-80C9-E4B5A9B38F67} = {7D0DB4FB-911F-4F01-B4DA-D9F509D35EEC}
 		{59696DF3-73C8-419A-8B29-6026D16188E4} = {7D0DB4FB-911F-4F01-B4DA-D9F509D35EEC}
 		{60BD09C5-8760-4C31-A0FE-61752076CD6C} = {7D0DB4FB-911F-4F01-B4DA-D9F509D35EEC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8FADA68E-7C18-40DA-9451-5F8F7063E7CF}
 	EndGlobalSection
 EndGlobal
