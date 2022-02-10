@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET.CronJ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET.Tests", "BackgroundService.NET.Tests\BackgroundService.NET.Tests.csproj", "{DF1E6C55-72B1-401B-BDD9-0E76DAB3C079}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET.HelloWorldPlugin", "BackgroundService.NET.SamplePlugins\BackgroundService.NET.HelloWorldPlugin\BackgroundService.NET.HelloWorldPlugin.csproj", "{7990B21C-F866-4826-B88A-8A678E63A576}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SamplePlugins", "SamplePlugins", "{7D0DB4FB-911F-4F01-B4DA-D9F509D35EEC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,12 @@ Global
 		{DF1E6C55-72B1-401B-BDD9-0E76DAB3C079}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF1E6C55-72B1-401B-BDD9-0E76DAB3C079}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF1E6C55-72B1-401B-BDD9-0E76DAB3C079}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7990B21C-F866-4826-B88A-8A678E63A576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7990B21C-F866-4826-B88A-8A678E63A576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7990B21C-F866-4826-B88A-8A678E63A576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7990B21C-F866-4826-B88A-8A678E63A576}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7990B21C-F866-4826-B88A-8A678E63A576} = {7D0DB4FB-911F-4F01-B4DA-D9F509D35EEC}
 	EndGlobalSection
 EndGlobal
