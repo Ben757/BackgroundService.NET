@@ -1,10 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk.Worker">
 
     <PropertyGroup>
+        <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <UserSecretsId>dotnet-BackgroundService.NET-17EBCACD-BD2D-42C9-8EF7-E367C5192FAD</UserSecretsId>
+        
+        <PublishDir>publish</PublishDir>
+        <PublishSingleFile>true</PublishSingleFile>
+        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+        <SelfContained>false</SelfContained>
     </PropertyGroup>
 
     <ItemGroup>
