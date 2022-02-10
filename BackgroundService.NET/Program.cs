@@ -17,4 +17,5 @@ void ConfigureServices(HostBuilderContext context, IServiceCollection services)
     services.AddSingleton<ICronJobProvider, CronJobProvider>();
 
     services.Configure<CronHostOptions>(context.Configuration.GetSection(nameof(CronHostOptions)));
+    services.Configure<CronJobProviderOptions>(context.Configuration.GetSection(nameof(CronJobProviderOptions)));
 }

@@ -1,12 +1,24 @@
 ﻿using System.Reflection;
 using BackgroundService.NET.CronJob;
+using Microsoft.Extensions.Options;
 
 namespace BackgroundService.NET.CronJobProviderService;
 
 public class CronJobProvider : ICronJobProvider
 {
+    private readonly string assemblyProbeDirectory;
     private ICronJob? cronJob;
-    
+
+    public CronJobProvider(IOptions<CronJobProviderOptions> options)
+    {
+#if DEBUG
+        assemblyProbeDirectory = !string.IsNullOrEmpty(options.Value.AssemblyProbeDirectory) ? 
+            options.Value.AssemblyProbeDirectory : AppContext.BaseDirectory;
+#else
+        assemblyProbeDirectory = AppContext.BaseDirectory;
+#endif
+    }
+
     public ICronJob GetCronJob()
     {
         if (cronJob == null)
@@ -19,9 +31,9 @@ public class CronJobProvider : ICronJobProvider
         return cronJob;
     }
 
-    private static Assembly? LoadPluginAssembly()
+    private Assembly? LoadPluginAssembly()
     {
-        var path = Path.Combine(AppContext.BaseDirectory, "CronJob.dll");
+        var path = Path.Combine(assemblyProbeDirectory, "CronJob.dll");
 
         try
         {
