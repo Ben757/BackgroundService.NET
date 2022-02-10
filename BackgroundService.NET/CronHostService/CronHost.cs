@@ -49,7 +49,8 @@ public class CronHost : ICronHost
             }
             catch (PluginNotFoundException pluginNotFoundException)
             {
-                logger.LogCritical(pluginNotFoundException, "Could not find plugin");
+                logger.LogCritical(pluginNotFoundException, "Could not find plugin. Retry in 10 sec");
+                await SafeDelay(TimeSpan.FromSeconds(10), cancellationToken);
             }
             catch (OperationCanceledException)
             {
@@ -62,5 +63,17 @@ public class CronHost : ICronHost
         }
         
         logger.LogDebug("Stopped cron host");
+    }
+
+    private static async Task SafeDelay(TimeSpan delay, CancellationToken cancellationToken)
+    {
+        try
+        {
+            await Task.Delay(delay, cancellationToken);
+        }
+        catch (OperationCanceledException)
+        {
+            //Tolerate cancellation during wait
+        }
     }
 }
