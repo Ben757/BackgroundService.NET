@@ -4,6 +4,7 @@ using BackgroundService.NET.CronJobProviderService;
 
 var host = Host.CreateDefaultBuilder(args)
     .ConfigureServices(ConfigureServices)
+    .UseWindowsService()
     .Build();
 
 await host.RunAsync();
