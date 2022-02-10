@@ -10,6 +10,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET.Hello
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SamplePlugins", "SamplePlugins", "{7D0DB4FB-911F-4F01-B4DA-D9F509D35EEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET.PluginWithDependencies", "BackgroundService.NET.SamplePlugins\BackgroundService.NET.PluginWithDependencies\BackgroundService.NET.PluginWithDependencies.csproj", "{AE68959B-67FC-405F-8850-E26AFEFB9794}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService.NET.FailingPlugin", "BackgroundService.NET.SamplePlugins\BackgroundService.NET.FailingPlugin\BackgroundService.NET.FailingPlugin.csproj", "{ED631137-25F8-46D8-80C9-E4B5A9B38F67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,8 +36,18 @@ Global
 		{7990B21C-F866-4826-B88A-8A678E63A576}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7990B21C-F866-4826-B88A-8A678E63A576}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7990B21C-F866-4826-B88A-8A678E63A576}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE68959B-67FC-405F-8850-E26AFEFB9794}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE68959B-67FC-405F-8850-E26AFEFB9794}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE68959B-67FC-405F-8850-E26AFEFB9794}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE68959B-67FC-405F-8850-E26AFEFB9794}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED631137-25F8-46D8-80C9-E4B5A9B38F67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED631137-25F8-46D8-80C9-E4B5A9B38F67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED631137-25F8-46D8-80C9-E4B5A9B38F67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED631137-25F8-46D8-80C9-E4B5A9B38F67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7990B21C-F866-4826-B88A-8A678E63A576} = {7D0DB4FB-911F-4F01-B4DA-D9F509D35EEC}
+		{AE68959B-67FC-405F-8850-E26AFEFB9794} = {7D0DB4FB-911F-4F01-B4DA-D9F509D35EEC}
+		{ED631137-25F8-46D8-80C9-E4B5A9B38F67} = {7D0DB4FB-911F-4F01-B4DA-D9F509D35EEC}
 	EndGlobalSection
 EndGlobal

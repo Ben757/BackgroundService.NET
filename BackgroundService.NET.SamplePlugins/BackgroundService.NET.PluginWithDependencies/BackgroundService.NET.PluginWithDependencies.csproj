@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+
+        <!-- This is important because the name of the plugin assembly is hard-coded in the plugin loader -->
+        <AssemblyName>CronJob</AssemblyName>
+
+        <!-- https://docs.microsoft.com/en-us/dotnet/core/tutorials/creating-app-with-plugin-support#simple-plugin-with-no-dependencies -->
+        <EnableDynamicLoading>true</EnableDynamicLoading>
+    </PropertyGroup>
+
+
+    <!-- https://docs.microsoft.com/en-us/dotnet/core/tutorials/creating-app-with-plugin-support#simple-plugin-with-no-dependencies -->
+    <ItemGroup>
+        <ProjectReference Include="..\..\BackgroundService.NET.CronJob\BackgroundService.NET.CronJob.csproj">
+            <Private>false</Private>
+            <ExcludeAssets>runtime</ExcludeAssets>
+        </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    </ItemGroup>
+
+</Project>
