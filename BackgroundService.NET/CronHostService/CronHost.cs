@@ -30,7 +30,7 @@ public class CronHost : ICronHost
         {
             try
             {
-                var cronExpression = CronExpression.Parse(CronHostOptions.CronString);
+                var cronExpression = CronExpression.Parse(CronHostOptions.CronString, CronFormat.IncludeSeconds);
 
                 var now = DateTime.UtcNow;
                 var waitTime = cronExpression.GetNextOccurrence(now) - now;

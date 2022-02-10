@@ -20,7 +20,7 @@ public class CronHostTests
     {
         // Arrange
         var job = new TestJob(false);
-        var sut = GetSut(job, "* * * * *");
+        var sut = GetSut(job, "* * * * * *");
         var cancellationTokenSource = new CancellationTokenSource();
         cancellationTokenSource.CancelAfter(TimeSpan.FromMilliseconds(100));
 
@@ -41,7 +41,7 @@ public class CronHostTests
     {
         // Arrange
         var job = new TestJob(true);
-        var sut = GetSut(job, "* * * * *");
+        var sut = GetSut(job, "* * * * * *");
         var cancellationTokenSource = new CancellationTokenSource();
         cancellationTokenSource.CancelAfter(TimeSpan.FromMilliseconds(100));
 
