@@ -1,5 +1,4 @@
-﻿using BackgroundService.NET.CronJob;
-using BackgroundService.NET.CronJobProviderService;
+﻿using BackgroundService.NET.CronJobProviderService;
 using Cronos;
 using Microsoft.Extensions.Options;
 
@@ -7,19 +6,19 @@ namespace BackgroundService.NET.CronHostService;
 
 public class CronHost : ICronHost
 {
+    private readonly ICronJobProvider jobProvider;
     private readonly ILogger<CronHost> logger;
     private readonly IOptionsMonitor<CronHostOptions> optionsMonitor;
     private readonly ICronWaiter waiter;
-    private readonly ICronJob cronJob;
 
     private CronHostOptions CronHostOptions => optionsMonitor.CurrentValue;
 
     public CronHost(ICronJobProvider jobProvider, ICronWaiter waiter, ILogger<CronHost> logger, IOptionsMonitor<CronHostOptions> optionsMonitor)
     {
+        this.jobProvider = jobProvider;
         this.logger = logger;
         this.optionsMonitor = optionsMonitor;
         this.waiter = waiter;
-        cronJob = jobProvider.GetCronJob();
     }
 
     public async Task ExecuteAsync(CancellationToken cancellationToken)
@@ -30,6 +29,8 @@ public class CronHost : ICronHost
         {
             try
             {
+                var cronJob = jobProvider.GetCronJob();
+                
                 var cronExpression = CronExpression.Parse(CronHostOptions.CronString, CronFormat.IncludeSeconds);
 
                 var now = DateTime.UtcNow;
@@ -45,6 +46,10 @@ public class CronHost : ICronHost
                 }
 
                 await cronJob.ExecuteAsync(cancellationToken);
+            }
+            catch (PluginNotFoundException pluginNotFoundException)
+            {
+                logger.LogCritical(pluginNotFoundException, "Could not find plugin");
             }
             catch (OperationCanceledException)
             {
