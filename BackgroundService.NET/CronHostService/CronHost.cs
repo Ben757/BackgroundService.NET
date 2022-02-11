@@ -34,8 +34,11 @@ public class CronHost : ICronHost
                 var cronExpression = CronExpression.Parse(CronHostOptions.CronString, CronFormat.IncludeSeconds);
 
                 var now = DateTime.UtcNow;
-                var waitTime = cronExpression.GetNextOccurrence(now) - now;
+                var nextOccurrence = cronExpression.GetNextOccurrence(now);
+                var waitTime = nextOccurrence - now;
 
+                logger.LogDebug("Scheduled next cron task for {NextCronTime}", nextOccurrence);
+                
                 if (waitTime.HasValue && waitTime.Value > TimeSpan.Zero)
                 {
                     await waiter.WaitAsync(waitTime.Value, cancellationToken);
