@@ -6,7 +6,9 @@ namespace BackgroundService.NET.PluginWithDependencies;
 // ReSharper disable once UnusedType.Global
 public class JsonDependentJob : ICronJob
 {
-    public Task ExecuteAsync(CancellationToken cancellationToken)
+    private const string FilePath = @"C:\ProgramData\BackgroundService.NET\sampleoutput.txt";
+    
+    public async Task ExecuteAsync(CancellationToken cancellationToken)
     {
         var sampleObject = new
         {
@@ -19,8 +21,6 @@ public class JsonDependentJob : ICronJob
 
         var json = JsonConvert.SerializeObject(sampleObject);
         
-        Console.WriteLine($"{DateTimeOffset.Now}: {json}");
-        
-        return Task.CompletedTask;
+        await File.AppendAllLinesAsync(FilePath, new[]{$"{DateTimeOffset.Now}: {json}"}, cancellationToken);
     }
 }

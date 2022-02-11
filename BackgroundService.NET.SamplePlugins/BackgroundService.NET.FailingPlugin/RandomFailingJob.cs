@@ -6,6 +6,7 @@ namespace BackgroundService.NET.FailingPlugin;
 public class RandomFailingJob : ICronJob
 {
     private readonly Random random = new();
+    private const string FilePath = @"C:\ProgramData\BackgroundService.NET\sampleoutput.txt";
 
     public async Task ExecuteAsync(CancellationToken cancellationToken)
     {
@@ -18,6 +19,6 @@ public class RandomFailingJob : ICronJob
         if (shouldFail)
             throw new InvalidOperationException("Failed randomly");
         
-        Console.WriteLine($"{DateTimeOffset.Now}: Job completed successfully");
+        await File.AppendAllLinesAsync(FilePath, new[]{$"{DateTimeOffset.Now}: Job completed successfully"}, cancellationToken);
     }
 }

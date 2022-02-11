@@ -5,10 +5,9 @@ namespace BackgroundService.NET.HelloWorldPlugin;
 // ReSharper disable once UnusedType.Global
 public class HelloWorldJob : ICronJob
 {
-    public Task ExecuteAsync(CancellationToken cancellationToken)
+    private const string FilePath = @"C:\ProgramData\BackgroundService.NET\sampleoutput.txt";
+    public async Task ExecuteAsync(CancellationToken cancellationToken)
     {
-        Console.WriteLine($"Hello World at {DateTimeOffset.Now}");
-        
-        return Task.CompletedTask;
+        await File.AppendAllLinesAsync(FilePath, new[]{$"Hello World at {DateTimeOffset.Now}"}, cancellationToken);
     }
 }

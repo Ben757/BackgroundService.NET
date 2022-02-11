@@ -5,10 +5,8 @@ namespace BackgroundService.NET.PluginWithProjectReference;
 
 public class PluginWithProjectReferenceJob : ICronJob
 {
-    public Task ExecuteAsync(CancellationToken cancellationToken)
+    public async Task ExecuteAsync(CancellationToken cancellationToken)
     {
-        new PluginHelper().Print();
-        
-        return Task.CompletedTask;
+        await PluginHelper.PrintAsync();
     }
 }

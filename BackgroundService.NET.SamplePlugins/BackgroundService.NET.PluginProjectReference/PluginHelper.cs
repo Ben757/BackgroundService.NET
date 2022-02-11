@@ -1,9 +1,10 @@
 ﻿namespace BackgroundService.NET.PluginProjectReference;
 
-public class PluginHelper
+public static class PluginHelper
 {
-    public void Print()
+    private const string FilePath = @"C:\ProgramData\BackgroundService.NET\sampleoutput.txt";
+    public static async Task PrintAsync()
     {
-        Console.WriteLine($"{DateTimeOffset.Now} This is printed from the reference project");
+        await File.AppendAllLinesAsync(FilePath, new[]{$"{DateTimeOffset.Now} This is printed from the reference project"});
     }
 }
